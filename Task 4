@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <string.h>
+
+typedef enum{
+    ELECTRONICS,
+    FOOD,
+    CLOTHING
+}Category;
+typedef struct{
+    char name[20];
+    Category category;
+    float price;
+}Product;
+int main(){
+    Product product[3];
+    for(int i = 0;i < 3;i++){
+    printf("Enter information %d\n",i + 1);
+    printf("Name: ");
+    scanf("%s",product[i].name);
+    int catInput;
+    printf("Category: 0:ELECTRONIC,1:FOOD,2:CLOTHING ");
+    scanf("%d",&catInput);
+    product[i].category = (Category)catInput;
+    printf("Price: ");
+    scanf("%f" ,&product[i].price);
+    printf("\n");
+}
+    printf("Food Category:\n");
+    for(int i = 0; i < 3;i++){
+        if(product[i].category == FOOD){
+        printf("Name: %s\n",product[i].name);
+        printf("Category:Food\n");
+        printf("Price: %.2f\n",product[i].price);
+        printf("-----------\n");
+ }
+}
+       return 0;
+
+}
+                   
