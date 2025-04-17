@@ -1,0 +1,36 @@
+#include <stdio.h>
+#define SIZE 5
+
+struct Student {
+    char name[30];
+    int age;
+    float marks;
+};
+void findbest(struct Student students[],int size){
+    int best = 0;
+   for(int i = 1; i < size; i++){
+    if(students[i].marks > students[best].marks){
+        best = i;
+  }
+}
+    printf("\nBest Marks:\n");
+    printf("Name: %s\n",students[best].name);
+    printf("Age: %d\n",students[best].age);
+    printf("Marks: %.2f\n",students[best].marks);
+
+}
+int main(){
+    struct Student students[SIZE];
+    for(int i = 0; i < SIZE; i++){
+        printf("Enter inforamiton for students %d:\n", i + 1);
+        printf("Name: ");
+        scanf("%s",students[i].name);
+        printf("Age: ");
+        scanf("%d",&students[i].age);
+        printf("Marks: ");
+        scanf("%f",&students[i].marks);
+        printf("\n");
+}
+    findbest(students,SIZE);
+    return 0;
+}
