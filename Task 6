@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Car{
+	char model[50];
+	int price;
+};
+	struct Car cmpCars(struct Car car1, struct Car car2){
+	if(car1.price > car2.price){
+	 return car1;
+	}else{
+	return car2;
+  }
+}
+int main(){
+	struct Car car1 = {"BMW X5",45000};
+	struct Car car2 ={"Audi Q7",50000};
+	struct Car expensiv = cmpCars(car1,car2);
+	printf("Expensiv car is: %s - %d",expensiv.model,expensiv.price);
+	return 0;
+}
