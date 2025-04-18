@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+union  Assigining{
+	int x;
+	float y;
+	char A;
+};
+int main(){
+	union Assigining val;
+	val.x =10;
+	printf("Integer value is:%d\n",val.x);
+	val.y = 5.5;
+	printf("Float value is:%.1f\n",val.y);
+	val.A = 'A'; 
+	printf("Char value:%c\n",val.A);
+	printf("Sizo of:%zu bytes\n",sizeof(val));
+	return 0;
+}
+		
