@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+union  Value{
+	int x;
+	float y;
+};
+int main(){
+	union Value val;
+	val.x = 25;
+	printf("Integer Value:%d\n",val.x);
+	val.y = 12.5;
+	printf("Float VAlue:%.1f\n",val.y);
+	printf("Size of:%zu bytes\n",sizeof(val));
+	return 0;
+}
